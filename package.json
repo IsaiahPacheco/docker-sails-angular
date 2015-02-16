@@ -1,8 +1,8 @@
 {
-  "name": "lnems",
+  "name": "docker-sails-angular",
   "private": true,
   "version": "0.0.0",
-  "description": "The Late Night Early Morning Show",
+  "description": "Demo Application",
   "keywords": [],
   "dependencies": {
     "bower": "~1.3.12",
@@ -28,11 +28,5 @@
     "start": "node app.js",
     "debug": "node debug app.js"
   },
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/isaiahpacheco/lnems.git"
-  },
-  "author": "Isaiah Pacheco",
-  "license": "All Rights Reserved"
+  "main": "app.js"
 }

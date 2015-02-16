@@ -32,9 +32,28 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+	'/': {
+		view: 'homepage',
+		skipAssets: true
+	},
+	'/app/*': {
+		view: 'app',
+		skipAssets: true
+	},
+	'/app': {
+		view: 'app',
+		skipAssets: true
+	},
+	// 'get /post/:slug': {
+	// 	controller: 'BlogController',
+	// 	action: 'findBySlug',
+	// 	skipAssets: true
+	// },
+	'get /search/list': {
+		controller: 'SearchController',
+		action: 'list',
+		skipAssets: true
+	}
 
   /***************************************************************************
   *                                                                          *

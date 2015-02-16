@@ -1,0 +1,23 @@
+<div id="app" data-ng-app="myDemo">
+
+	<% include partials/menu.ejs %>
+
+	<div data-ng-controller="PaneController" class="pane full {{ class }}">
+		<div class="pane-header">
+			<button class="toggle-show-menu left" data-ng-click="toggleShowMenu()">
+				<i class="fa fa-bars fa-3x"> </i>
+			</button>
+			<button class="toggle-search right">
+				<i class="fa fa-search fa-3x"> </i>
+			</button>
+
+			<% include partials/player.ejs %>
+
+		</div>
+		<div class="pane-body">
+
+			<div ng-view></div>
+
+		</div>
+	</div>
+</div>

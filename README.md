@@ -1,8 +1,6 @@
-#Docker-sails-angular (not working in current state)
+#Docker-sails-angular - Example use only
 
-Currently I am in the process of building a platform for a hobby project and using it as an learning oppurtunity and test-bed of new ideas. This is not a active repository just a place to expose example code.
-
-
+Currently I am in the process of building a platform for a hobby project and using it as an learning oppurtunity and test-bed of new ideas. This is not a active repository just a place to expose example code; it is a single dockerized application. In the active repository I am actively developing deployable container clusters for AWS using a Ghost Blog, Amazon RDS, custom app in Angular -> Polymer (migrating) and SailsJS.
 
 ##Mac
 ###Dependencies
@@ -12,7 +10,18 @@ Currently I am in the process of building a platform for a hobby project and usi
 - [Install Tutum](https://tutum.freshdesk.com/support/solutions/articles/5000049209-installing-the-command-line-interface-tool) or $ brew install tutum
 - Local Checkout of this repo.
 
-###Local Setup
+###Local App
+
+```
+brew install node (or visit http://nodejs.org/ and follow installation)
+npm -g install bower sails
+npm install
+bower install
+sails lift
+
+```
+
+###Local Docker
 
 ```
 boot2docker start
@@ -36,20 +45,16 @@ boot2docker ip
 ```
 tutum login
 
-tutum image push lnems
+tutum image push demo
 
-tutum service run -p 80:80/tcp --name lnems tutum.co/tutum-username/docker-sails-angular
+tutum service run -p 80:80/tcp --name demo tutum.co/tutum-username/docker-sails-angular
 
 ```
 
 ###status
 
 ```
-// view service process status
-tutum service ps
-
-// view container process status
-tutum container ps
+docker ps
 
 ```
 
@@ -57,8 +62,8 @@ tutum container ps
 *replace `uuid` with targeted container id
 
 ```
-tutum service ps
-
 docker stop uuid
+//OR
+docker kill uuid
 
 ```

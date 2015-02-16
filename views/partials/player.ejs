@@ -1,0 +1,32 @@
+<div plangular="http://soundcloud.com/jxnblk/really-wanna" />
+<div plangular id="player">
+	<div plangular class="player-inner left">
+		<span ng-if="!track" class="stream-content">Loading...</span>
+
+		<div ng-if="track" class="stream-content">
+			<img class="artwork left" ng-src="{{ track.artwork_url  }}" alt="track artwork" />
+
+			<img ng-src="{{ track.artwork_url  }}" alt="{{ track.title }}" />
+			<img ng-src="{{ track.waveform_url }}" alt="waveform" />
+			<div class="info-container">
+				<progress value="{{ player.currentTime / player.duration || 0 }}" ng-click="player.seek($event)">{{ player.currentTime / player.duration }}</progress>
+				<div class="title-time">
+					<h5>{{ player.currentTrack.title }}</h5>
+					<small>{{ player.currentTime | prettyTime }} | {{ player.duration | prettyTime }}</small>
+				</div>
+			</div>
+			<div class="controls-container">
+				<button class="plangular-button" ng-click="player.playPause(player.i, player.playlistIndex)">
+					<!-- <i class="fa fa-step-backward fa-2x"ng-click="previous()"></i> -->
+					<!-- ng-click="playPause()" -->
+					<i ng-if=" ! player.playing" class="fa fa-play fa-3x"></i>
+					<i ng-if="player.playing" class="fa fa-pause fa-3x"></i>
+					<!-- <i class="fa fa-step-forward fa-2x" ng-click="next()"></i> -->
+				</button>
+			</div>
+				<!-- <a class="powered-by" ng-href="{{ track.permalink_url }}"><img src="/images/sc_powered_by_black.png" /></a> -->
+		</div>
+	</div>
+</div>
+
+<div plangular="http://soundcloud.com/jxnblk/really-wanna"> </div>
